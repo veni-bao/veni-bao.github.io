@@ -44,7 +44,7 @@
     <title>vtuber</title>
     <url>/2025/03/11/vtuber/</url>
     <content><![CDATA[<h2 id="OpenLLM-Vtuber"><a href="#OpenLLM-Vtuber" class="headerlink" title="OpenLLM-Vtuber"></a>OpenLLM-Vtuber</h2><p>I’d like to create an avatar of Shorekeeper using the github Item “OpenLLM-Vtuber”. This blog is to trace my progress.</p>
-<h2 id="2025-3-11"><a href="#2025-3-11" class="headerlink" title="2025&#x2F;3&#x2F;11"></a>2025&#x2F;3&#x2F;11</h2><p>I cloned the repository and ran the code. Using my deepseek API from “火山方舟”, I successed in starting basic communication on local server with suiku, the default avatar in the Item. I gave her the prompt of shorekeeper.<br><img src="/image/vtuber/1741680793826.png" alt="1741680793826"></p>
+<h2 id="2025-3-11"><a href="#2025-3-11" class="headerlink" title="2025&#x2F;3&#x2F;11"></a>2025&#x2F;3&#x2F;11</h2><p>I cloned the repository and ran the code. Using my deepseek API from “火山方舟”, I successed in starting basic communication on local server with suiku, the default avatar in the Item. I gave her the prompt of shorekeeper.<br><img src="/../../img/1741680793826.png" alt="1741680793826"></p>
 <p>Future plans:</p>
 <ul>
 <li><input disabled="" type="checkbox"> Create a new avatar of shorekeeper using Live2D. But it’s quite “Art”, maybe hard for a programmer like me to do it.</li>
