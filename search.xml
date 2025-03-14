@@ -56,8 +56,8 @@
 </ul>
 <h2 id="2025-3-14"><a href="#2025-3-14" class="headerlink" title="2025&#x2F;3&#x2F;14"></a>2025&#x2F;3&#x2F;14</h2><p>I found a great AI audio creater <a href="https://gsv.acgnai.top/">GPT-Sovits</a>. I generated an example:</p>
 <audio controls>
-  <source src="/images/shorekeeper.wav" type="audio/wav">
-  您的浏览器不支持 audio 元素。
+  <source src="/images/shorekeeper.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
 </audio>
 ]]></content>
   </entry>
