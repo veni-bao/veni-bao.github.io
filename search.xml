@@ -54,6 +54,11 @@
 <li><input disabled="" type="checkbox"> Replace the default AudioEngine with my own. I think it’s possible, but I need to learn more about the AudioEngine.</li>
 <li><input disabled="" type="checkbox"> Use my local deepseek-r1-distill-Qwen-14B to run the avatar. Whether she will be smarter or not remains to be seen.</li>
 </ul>
+<h2 id="2025-3-14"><a href="#2025-3-14" class="headerlink" title="2025&#x2F;3&#x2F;14"></a>2025&#x2F;3&#x2F;14</h2><p>I found a great AI audio creater <a href="https://gsv.acgnai.top/">GPT-Sovits</a>. I generated an example:</p>
+<audio controls>
+  <source src="/images/shorekeeper.wav" type="audio/wav">
+  您的浏览器不支持 audio 元素。
+</audio>
 ]]></content>
   </entry>
   <entry>
@@ -61,5 +66,10 @@
     <url>/2025/03/11/DFT/</url>
     <content><![CDATA[<h2 id="DFT-learning-note"><a href="#DFT-learning-note" class="headerlink" title="DFT learning note"></a>DFT learning note</h2><p>2025&#x2F;3&#x2F;11<br>Always leave some note when learning. This will be my everyday learning note about DFT.</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>HPC</title>
+    <url>/2025/03/12/HPC/</url>
+    <content><![CDATA[<h2 id="High-Performance-Computing"><a href="#High-Performance-Computing" class="headerlink" title="High Performance Computing"></a>High Performance Computing</h2>]]></content>
   </entry>
 </search>
