@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TCP - Jiahao&#39;s Blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="I came, I saw, I conquered.,TCP chatroomThis is the first assignment of “Computer Network: a top- down approach” course. It’s a,"> 
+    <meta name="author" content="Jiahao Bao"> 
+    <link rel="alternative" href="atom.xml" title="Jiahao&#39;s Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="TCP - Jiahao&#39;s Blog"/>
+    <meta name="twitter:description" content="I came, I saw, I conquered.,TCP chatroomThis is the first assignment of “Computer Network: a top- down approach” course. It’s a,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="Jiahao&#39;s Blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="TCP - Jiahao&#39;s Blog"/>
+    <meta property="og:description" content="I came, I saw, I conquered.,TCP chatroomThis is the first assignment of “Computer Network: a top- down approach” course. It’s a,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Jiahao&#39;s Blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://veni-bao.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">TCP</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">TCP</h1>
+        <div class="stuff">
+            <span>三月 31, 2025</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/network/" rel="tag">network</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="TCP-chatroom"><a href="#TCP-chatroom" class="headerlink" title="TCP chatroom"></a>TCP chatroom</h2><p>This is the first assignment of “Computer Network: a top- down approach” course. It’s a simple TCP chatroom. The server can accept multiple clients and exchange messages and files with them. The server and client are implemented by python.</p>
+<h2 id="Socket-Programming-Lab-Report"><a href="#Socket-Programming-Lab-Report" class="headerlink" title="Socket Programming Lab Report"></a>Socket Programming Lab Report</h2><p><strong>Name:</strong> 包佳昊<br><strong>Student ID:</strong> 2023012325<br><strong>Date:</strong> 29&#x2F;03</p>
+<hr>
+<h3 id="1-Experiment-Objectives"><a href="#1-Experiment-Objectives" class="headerlink" title="1.Experiment Objectives"></a>1.Experiment Objectives</h3><ul>
+<li>To understand the basics of socket programming</li>
+<li>To implement server-client architecture using TCP protocol.</li>
+<li>To implement multi-thread server using TCP protocol.</li>
+</ul>
+<h3 id="2-Experimental-Environment"><a href="#2-Experimental-Environment" class="headerlink" title="2.Experimental Environment"></a>2.Experimental Environment</h3><ul>
+<li><strong>Programming Language:</strong> Python 3.12.4</li>
+<li><strong>Libraries:</strong> socket and threading module in python</li>
+<li><strong>Tool:</strong> Wireshake for packet capture</li>
+</ul>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>For single thread TCP part,</p>
+<h5 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./TCP/</span><br><span class="line">python server.py 18080 input</span><br></pre></td></tr></table></figure>
+
+<p>Options:</p>
+<ul>
+<li><code>18080</code>: Server listening port (default:18080)</li>
+<li><code>input</code>: Server response type (default:upper), including “input” and “upper”</li>
+</ul>
+<h5 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./TCP</span><br><span class="line">python client.py 127.0.0.1 18080</span><br></pre></td></tr></table></figure>
+
+<p>Options:</p>
+<ul>
+<li><code>127.0.0.1</code> server IP to connect to (default:127.0.0.1)</li>
+<li><code>18080</code> server port to connect to (default:18080)</li>
+</ul>
+<p>For multiple thread TCP server part</p>
+<h5 id="Server-1"><a href="#Server-1" class="headerlink" title="Server"></a>Server</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./Threading/</span><br><span class="line">python server.py 18080 upper 10</span><br></pre></td></tr></table></figure>
+
+<p>Options:</p>
+<ul>
+<li><code>18080</code>: Server listening port (default:18080)</li>
+<li><code>10</code>: the maximum number of clients the server can accept (default:10)</li>
+<li><code>upper</code>: Server response mode (default:upper), including “input” and “upper”</li>
+</ul>
+<h5 id="Client-1"><a href="#Client-1" class="headerlink" title="Client"></a>Client</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./Threading/</span><br><span class="line">python client.py client0 127.0.0.1 18080</span><br></pre></td></tr></table></figure>
+
+<p>And for a new client</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./Threading/</span><br><span class="line">python client.py client1 127.0.0.1 18080</span><br></pre></td></tr></table></figure>
+
+<p>And so on…<br>Options:</p>
+<ul>
+<li><code>127.0.0.1</code> server IP to connect to (default:127.0.0.1)</li>
+<li><code>18080</code> server port to connect to (default:18080)</li>
+<li><code>client1</code> client name (default:client0), necessary for more than 1 clients, to separately manage the files different clients own.</li>
+</ul>
+<h4 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h4><ul>
+<li>All above commands are executed in the root directory of the project, and you can run without any arguments to use the default values.</li>
+<li>Server is set a time out limit of 120, which is not necessary. It’s just to easily quit the server when it’s not being used.</li>
+<li>Client is set a time out limit of 30.</li>
+</ul>
+<p>After connection is set up, the client and server go in a circle of “receive - send”. User repeatedly give commands through client.<br>There are 3 types of input commands:</p>
+<ul>
+<li>ask for file:someFile :require server sending someFile to the folder client manages</li>
+<li>send file:someFile :send local file someFile to folder “server” that server manages</li>
+<li>exit :quit connction with server</li>
+<li>else: send the input message encoded by ‘UTF-8’ to server, and receive reponse from server. The argument <code>responseType</code> in class TCP_Server&#x2F;Multithread_Server determines how server response. <code>responseType = upper</code> automatically return the total uppercase of client massage, <code>responseType = input</code> require server input response by hand.</li>
+</ul>
+<h3 id="3-Experimental-Procedure"><a href="#3-Experimental-Procedure" class="headerlink" title="3.Experimental Procedure"></a>3.Experimental Procedure</h3><p>Using Wireshake, we can capture the packets sent between client and server.<br>Because multi-thread version totally inludes functions of single thread version, I will only show the result of multi thread version here.<br>The following figures shows the example:<br><img src="/./TCP/cmd.png" alt="cmd"><br>During the connection, the WireShark capture the packets sent between client and server.<br>When the connections are setup:<br><img src="/./TCP/shark1.png" alt="capture"><br>When client0 exits and client1 is receiving shore.jpg from server:<br><img src="/./TCP/shark2.png" alt="result"><br>I didn’t show the whole process because shore.jpg takes too many packets to be sent.</p>
+<p>For more test, the .&#x2F;server&#x2F; has 出师表.txt, the .&#x2F;client has keep.jpg.</p>
+<h3 id="4-Experiment-Analysis"><a href="#4-Experiment-Analysis" class="headerlink" title="4.Experiment Analysis"></a>4.Experiment Analysis</h3><p>It can be easily found that “3-way” hand shake happens. Looking at the wireshark captures, before the first request of port 9461 and the connection of port 9465, there are 3 packets sent between client and server:No.109,110,111. In 109, client0 sends a SYN packet to server, and in 110, server sends a SYN-ACK packet to client0, and in 111, client0 sends a ACK packet to server. After that, the connection is established. Of course, the same thing happens for client1, which is demonstrated in No.144,145,146.</p>
+<h3 id="5-Experiment-Summary"><a href="#5-Experiment-Summary" class="headerlink" title="5.Experiment Summary"></a>5.Experiment Summary</h3><p>TCP can be visualized like the following picture:<br><img src="/./img/fig.png" alt="TCP"><br>With the experiment, we can better under stand why TCP is reliable.</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="https://link.hhtjim.com/163/2638585927.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
