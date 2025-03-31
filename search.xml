@@ -106,7 +106,7 @@
     <title>TCP</title>
     <url>/2025/03/31/TCP/</url>
     <content><![CDATA[<h2 id="TCP-chatroom"><a href="#TCP-chatroom" class="headerlink" title="TCP chatroom"></a>TCP chatroom</h2><p>This is the first assignment of “Computer Network: a top- down approach” course. It’s a simple TCP chatroom. The server can accept multiple clients and exchange messages and files with them. The server and client are implemented by python.</p>
-<h2 id="Socket-Programming-Lab-Report"><a href="#Socket-Programming-Lab-Report" class="headerlink" title="Socket Programming Lab Report"></a>Socket Programming Lab Report</h2><p><strong>Name:</strong> 包佳昊<br><strong>Student ID:</strong> 2023012325<br><strong>Date:</strong> 29&#x2F;03</p>
+<h2 id="Socket-Programming-Lab-Report"><a href="#Socket-Programming-Lab-Report" class="headerlink" title="Socket Programming Lab Report"></a>Socket Programming Lab Report</h2><p><strong>Name:</strong> Bao<br><strong>Student ID:</strong> xxxxxxxxxx<br><strong>Date:</strong> 29&#x2F;03</p>
 <hr>
 <h3 id="1-Experiment-Objectives"><a href="#1-Experiment-Objectives" class="headerlink" title="1.Experiment Objectives"></a>1.Experiment Objectives</h3><ul>
 <li>To understand the basics of socket programming</li>
