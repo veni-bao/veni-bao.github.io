@@ -50,7 +50,7 @@
 <p><img src="/images/image.png"></p>
 <p>Future plans:</p>
 <ul>
-<li><input disabled="" type="checkbox"> Create a new avatar of shorekeeper using Live2D. But it’s quite “Art”, maybe hard for a programmer like me to do it.</li>
+<li><input checked="" disabled="" type="checkbox"> Create a new avatar of shorekeeper using Live2D. But it’s quite “Art”, maybe hard for a programmer like me to do it.</li>
 <li><input disabled="" type="checkbox"> Replace the default AudioEngine with my own. I think it’s possible, but I need to learn more about the AudioEngine.</li>
 <li><input disabled="" type="checkbox"> Use my local deepseek-r1-distill-Qwen-14B to run the avatar. Whether she will be smarter or not remains to be seen.</li>
 </ul>
@@ -59,7 +59,13 @@
   <source src="./vtuber/shorekeeper.mp3" type="audio/mpeg">
 </audio>
 
-<h2 id="2025-4-21"><a href="#2025-4-21" class="headerlink" title="2025&#x2F;4&#x2F;21"></a>2025&#x2F;4&#x2F;21</h2><p>I returned to the Item after a long time. </p>
+<h2 id="2025-4-21"><a href="#2025-4-21" class="headerlink" title="2025&#x2F;4&#x2F;21"></a>2025&#x2F;4&#x2F;21</h2><p>I returned to the Item after a long time. This time I realized using the live2d model of 秧秧 instead of the default one. I also used a prompt of “Queen”. See here:<br><img src="/images/1745545848849.png" alt="1745545848849"></p>
+<p>next step:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Use my local deepseek-r1-distill-Qwen-14B to run the avatar.</li>
+<li><input disabled="" type="checkbox"> Find a well-drowned avatar.</li>
+<li><input disabled="" type="checkbox"> Replace the audio engin.</li>
+</ul>
 ]]></content>
       <categories>
         <category>interest</category>
