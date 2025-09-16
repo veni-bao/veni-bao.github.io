@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Jiahao&#39;s Blog - veni vidi vici</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="I came, I saw, I conquered.,"> 
+    <meta name="author" content="Jiahao Bao"> 
+    <link rel="alternative" href="atom.xml" title="Jiahao&#39;s Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Jiahao&#39;s Blog - veni vidi vici"/>
+    <meta name="twitter:description" content="I came, I saw, I conquered.,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="Jiahao&#39;s Blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="Jiahao&#39;s Blog - veni vidi vici"/>
+    <meta property="og:description" content="I came, I saw, I conquered.,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Jiahao&#39;s Blog</span>
+    <div id="loader"></div>
+    <div id="single" class="page">
+    <div id="top">
+        <a class="iconfont icon-left image-icon" href="javascript:history.back()"></a>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div class="main">
+                <div class="content">
+                
+                        
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>矩阵子矩阵和计算 - C++代码展示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        dark: '#1E293B',
+                        light: '#F8FAFC',
+                        accent: '#8B5CF6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .code-line {
+                @apply py-0.5 px-4 text-sm;
+            }
+            .code-line:hover {
+                @apply bg-dark/50;
+            }
+            .line-number {
+                @apply text-gray-400 text-right pr-4 select-none;
+            }
+            .keyword {
+                @apply text-blue-400;
+            }
+            .comment {
+                @apply text-green-400;
+            }
+            .string {
+                @apply text-yellow-300;
+            }
+            .function {
+                @apply text-purple-300;
+            }
+            .variable {
+                @apply text-cyan-300;
+            }
+            .number {
+                @apply text-orange-300;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-code text-primary text-2xl"></i>
+                <h1 class="text-xl font-bold">C++ 代码展示</h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#code" class="hover:text-primary transition-colors"><i class="fa fa-file-code-o mr-1"></i>代码</a></li>
+                    <li><a href="#explanation" class="hover:text-primary transition-colors"><i class="fa fa-book mr-1"></i>解释</a></li>
+                    <li><a href="#features" class="hover:text-primary transition-colors"><i class="fa fa-list-ul mr-1"></i>功能</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 代码信息卡片 -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8 transform hover:shadow-lg transition-shadow">
+            <div class="flex items-center mb-4">
+                <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                    <i class="fa fa-calculator text-primary text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-1">矩阵子矩阵和计算</h2>
+                    <p class="text-gray-600">高效计算二维矩阵中子矩阵元素之和的C++实现</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"><i class="fa fa-tag mr-1"></i>C++</span>
+                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full"><i class="fa fa-cube mr-1"></i>矩阵运算</span>
+                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full"><i class="fa fa-clock-o mr-1"></i>前缀和算法</span>
+                <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full"><i class="fa fa-tachometer mr-1"></i>高效计算</span>
+            </div>
+        </div>
+
+        <!-- 代码展示区 -->
+        <section id="code" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fa fa-file-code-o text-primary mr-2"></i>代码展示
+            </h2>
+            <div class="bg-dark rounded-xl shadow-lg overflow-hidden">
+                <!-- 代码工具栏 -->
+                <div class="bg-gray-800 px-4 py-3 flex justify-between items-center">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="text-gray-400 text-sm">matrix_sum.cpp</div>
+                    <button id="copy-btn" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center">
+                        <i class="fa fa-copy mr-1"></i>复制代码
+                    </button>
+                </div>
+                
+                <!-- 代码内容 -->
+                <div class="flex overflow-x-auto">
+                    <!-- 行号 -->
+                    <div class="bg-gray-800 text-gray-400 px-2">
+                        <div class="code-line">1</div>
+                        <div class="code-line">2</div>
+                        <div class="code-line">3</div>
+                        <div class="code-line">4</div>
+                        <div class="code-line">5</div>
+                        <div class="code-line">6</div>
+                        <div class="code-line">7</div>
+                        <div class="code-line">8</div>
+                        <div class="code-line">9</div>
+                        <div class="code-line">10</div>
+                        <div class="code-line">11</div>
+                        <div class="code-line">12</div>
+                        <div class="code-line">13</div>
+                        <div class="code-line">14</div>
+                        <div class="code-line">15</div>
+                        <div class="code-line">16</div>
+                        <div class="code-line">17</div>
+                        <div class="code-line">18</div>
+                        <div class="code-line">19</div>
+                        <div class="code-line">20</div>
+                        <div class="code-line">21</div>
+                        <div class="code-line">22</div>
+                        <div class="code-line">23</div>
+                        <div class="code-line">24</div>
+                        <div class="code-line">25</div>
+                        <div class="code-line">26</div>
+                        <div class="code-line">27</div>
+                        <div class="code-line">28</div>
+                        <div class="code-line">29</div>
+                        <div class="code-line">30</div>
+                        <div class="code-line">31</div>
+                        <div class="code-line">32</div>
+                        <div class="code-line">33</div>
+                        <div class="code-line">34</div>
+                        <div class="code-line">35</div>
+                        <div class="code-line">36</div>
+                    </div>
+                    
+                    <!-- 代码 -->
+                    <div class="font-mono text-gray-200 flex-1" id="code-content">
+                        <div class="code-line"><span class="keyword">#include</span> <span class="string">&lt;cstdio&gt;</span></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"><span class="comment">// int matrix[2000][2000];</span></div>
+                        <div class="code-line"><span class="keyword">int</span> <span class="variable">matrix</span>[<span class="number">2001</span>][<span class="number">2001</span>];</div>
+                        <div class="code-line"><span class="comment">// int submetricsum[2000][2000];</span></div>
+                        <div class="code-line"><span class="keyword">long long</span> <span class="variable">submetricsum</span>[<span class="number">2001</span>][<span class="number">2001</span>];</div>
+                        <div class="code-line"></div>
+                        <div class="code-line"><span class="keyword">int</span> <span class="function">main</span>()</div>
+                        <div class="code-line">{</div>
+                        <div class="code-line">    <span class="keyword">int</span> <span class="variable">n</span>, <span class="variable">m</span>, <span class="variable">q</span>;</div>
+                        <div class="code-line">    <span class="function">scanf</span>(<span class="string">"%d%d"</span>, &amp;<span class="variable">n</span>, &amp;<span class="variable">m</span>);</div>
+                        <div class="code-line">    <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">i</span> = <span class="number">1</span>; <span class="variable">i</span> &lt;= <span class="variable">n</span>; ++<span class="variable">i</span>) {</div>
+                        <div class="code-line">        <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">j</span> = <span class="number">1</span>; <span class="variable">j</span> &lt;= <span class="variable">m</span>; ++<span class="variable">j</span>) {</div>
+                        <div class="code-line">            <span class="function">scanf</span>(<span class="string">"%d"</span>, &amp;<span class="variable">matrix</span>[<span class="variable">i</span>][<span class="variable">j</span>]);</div>
+                        <div class="code-line">        }</div>
+                        <div class="code-line">    }</div>
+                        <div class="code-line">    <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">j</span> = <span class="number">0</span>; <span class="variable">j</span> &lt;= <span class="variable">m</span>; ++<span class="variable">j</span>) {</div>
+                        <div class="code-line">        <span class="variable">submetricsum</span>[<span class="number">0</span>][<span class="variable">j</span>] = <span class="number">0</span>;</div>
+                        <div class="code-line">    }</div>
+                        <div class="code-line">    <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">i</span> = <span class="number">1</span>; <span class="variable">i</span> &lt;= <span class="variable">n</span>; ++<span class="variable">i</span>) {</div>
+                        <div class="code-line">        <span class="variable">submetricsum</span>[<span class="variable">i</span>][<span class="number">0</span>] = <span class="number">0</span>;</div>
+                        <div class="code-line">        <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">j</span> = <span class="number">1</span>; <span class="variable">j</span> &lt;= <span class="variable">m</span>; ++<span class="variable">j</span>) {</div>
+                        <div class="code-line">            <span class="variable">submetricsum</span>[<span class="variable">i</span>][<span class="variable">j</span>] = <span class="variable">submetricsum</span>[<span class="variable">i</span>][<span class="variable">j</span> - <span class="number">1</span>] + <span class="variable">matrix</span>[<span class="variable">i</span>][<span class="variable">j</span>] + <span class="variable">submetricsum</span>[<span class="variable">i</span>-<span class="number">1</span>][<span class="variable">j</span>] - <span class="variable">submetricsum</span>[<span class="variable">i</span>-<span class="number">1</span>][<span class="variable">j</span>-<span class="number">1</span>];</div>
+                        <div class="code-line">        }</div>
+                        <div class="code-line">    }</div>
+                        <div class="code-line">    <span class="function">scanf</span>(<span class="string">"%d"</span>, &amp;<span class="variable">q</span>);</div>
+                        <div class="code-line">    <span class="comment">// int sum = 0;</span></div>
+                        <div class="code-line">    <span class="keyword">int</span> <span class="variable">x</span>,<span class="variable">y</span>,<span class="variable">a</span>,<span class="variable">b</span>;</div>
+                        <div class="code-line">    <span class="keyword">for</span> (<span class="keyword">int</span> <span class="variable">i</span> = <span class="number">1</span>; <span class="variable">i</span> &lt;= <span class="variable">q</span>; ++<span class="variable">i</span>) {</div>
+                        <div class="code-line">        <span class="comment">// int x, y, a, b;</span></div>
+                        <div class="code-line">        <span class="keyword">long long</span> <span class="variable">sum</span> = <span class="number">0</span>;</div>
+                        <div class="code-line">        <span class="function">scanf</span>(<span class="string">"%d %d %d %d"</span>, &amp;<span class="variable">x</span>, &amp;<span class="variable">y</span>, &amp;<span class="variable">a</span>, &amp;<span class="variable">b</span>);</div>
+                        <div class="code-line">        <span class="variable">sum</span> = <span class="variable">submetricsum</span>[<span class="variable">x</span>+<span class="variable">a</span>-<span class="number">1</span>][<span class="variable">y</span>+<span class="variable">b</span>-<span class="number">1</span>] - <span class="variable">submetricsum</span>[<span class="variable">x</span>+<span class="variable">a</span>-<span class="number">1</span>][<span class="variable">y</span>-<span class="number">1</span>] - <span class="variable">submetricsum</span>[<span class="variable">x</span>-<span class="number">1</span>][<span class="variable">y</span>+<span class="variable">b</span>-<span class="number">1</span>] + <span class="variable">submetricsum</span>[<span class="variable">x</span>-<span class="number">1</span>][<span class="variable">y</span>-<span class="number">1</span>];</div>
+                        <div class="code-line">        <span class="function">printf</span>(<span class="string">"%lld\n"</span>, <span class="variable">sum</span>);</div>
+                        <div class="code-line">    }</div>
+                        <div class="code-line">    <span class="keyword">return</span> <span class="number">0</span>;</div>
+                        <div class="code-line">}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 代码解释 -->
+        <section id="explanation" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fa fa-book text-primary mr-2"></i>代码解释
+            </h2>
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-primary">程序功能</h3>
+                        <p class="text-gray-700">
+                            该程序实现了一个高效计算二维矩阵中子矩阵元素之和的功能。通过预处理构建前缀和矩阵，可以在O(1)时间内回答每个子矩阵和的查询，大大提高了多次查询时的效率。
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-primary">核心算法：二维前缀和</h3>
+                        <p class="text-gray-700 mb-4">
+                            程序使用了二维前缀和算法，其核心思想是预先计算矩阵中每个位置到左上角的矩形区域的元素和，存储在submetricsum数组中。这样，任意子矩阵的和都可以通过前缀和数组中的四个值计算得到。
+                        </p>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <p class="font-mono text-sm">
+                                submetricsum[i][j] = 矩阵中从(1,1)到(i,j)的所有元素之和
+                            </p>
+                            <p class="font-mono text-sm mt-2">
+                                计算公式：submetricsum[i][j] = submetricsum[i][j-1] + matrix[i][j] + submetricsum[i-1][j] - submetricsum[i-1][j-1]
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-primary">查询计算</h3>
+                        <p class="text-gray-700 mb-4">
+                            对于查询从(x,y)开始，大小为a×b的子矩阵和，计算公式为：
+                        </p>
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <p class="font-mono text-sm">
+                                sum = submetricsum[x+a-1][y+b-1] - submetricsum[x+a-1][y-1] - submetricsum[x-1][y+b-1] + submetricsum[x-1][y-1]
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-primary">数据结构</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                            <li><span class="font-medium">matrix[2001][2001]</span>：存储原始矩阵数据，使用1-based索引</li>
+                            <li><span class="font-medium">submetricsum[2001][2001]</span>：存储前缀和矩阵，使用long long类型防止溢出</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 功能特点 -->
+        <section id="features" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fa fa-list-ul text-primary mr-2"></i>功能特点
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-6 transform hover:-translate-y-1 transition-transform">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fa fa-tachometer"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">高效查询</h3>
+                    <p class="text-gray-600">
+                        通过O(n×m)的预处理，将每个子矩阵和的查询时间降低到O(1)，特别适合需要多次查询的场景。
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 transform hover:-translate-y-1 transition-transform">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fa fa-shield"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">防止溢出</h3>
+                    <p class="text-gray-600">
+                        使用long long类型存储前缀和，有效防止了大矩阵元素和可能导致的整数溢出问题。
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 transform hover:-translate-y-1 transition-transform">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fa fa-code-fork"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">清晰的代码结构</h3>
+                    <p class="text-gray-600">
+                        代码逻辑清晰，分为矩阵输入、前缀和计算和查询处理三个主要部分，易于理解和维护。
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 transform hover:-translate-y-1 transition-transform">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fa fa-expand"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">足够的空间</h3>
+                    <p class="text-gray-600">
+                        矩阵大小设置为2001×2001，可以处理最大2000×2000的输入矩阵，满足大多数场景需求。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 运行示例 -->
+        <section id="example" class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fa fa-play-circle text-primary mr-2"></i>运行示例
+            </h2>
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">输入示例</h3>
+                        <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm">
+                            <p>3 3</p>
+                            <p>1 2 3</p>
+                            <p>4 5 6</p>
+                            <p>7 8 9</p>
+                            <p>2</p>
+                            <p>1 1 2 2</p>
+                            <p>2 2 2 2</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-gray-800">输出示例</h3>
+                        <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm">
+                            <p>12</p>
+                            <p>28</p>
+                        </div>
+                        <p class="text-gray-600 mt-3 text-sm">
+                            解释：第一个查询计算(1,1)到(2,2)的子矩阵和：1+2+4+5=12<br>
+                            第二个查询计算(2,2)到(3,3)的子矩阵和：5+6+8+9=28
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-gray-400 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fa fa-code text-primary text-xl mr-2"></i>
+                        <span class="font-bold text-white">C++ 代码展示</span>
+                    </div>
+                    <p class="text-sm mt-1">矩阵子矩阵和计算的实现与解析</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-primary transition-colors"><i class="fa fa-github text-xl"></i></a>
+                    <a href="#" class="hover:text-primary transition-colors"><i class="fa fa-stack-overflow text-xl"></i></a>
+                    <a href="#" class="hover:text-primary transition-colors"><i class="fa fa-linkedin text-xl"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-sm">
+                &copy; 2023 代码展示页面 | 使用 Tailwind CSS 构建
+            </div>
+        </div>
+    </footer>
+
+    <!-- 复制成功提示 -->
+    <div id="copy-toast" class="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 flex items-center">
+        <i class="fa fa-check mr-2"></i>
+        <span>代码已复制到剪贴板</span>
+    </div>
+
+    <script>
+        // 复制代码功能
+        document.getElementById('copy-btn').addEventListener('click', function() {
+            // 提取代码文本
+            const codeLines = document.querySelectorAll('#code-content .code-line');
+            let codeText = '';
+            codeLines.forEach(line => {
+                // 移除HTML标签，只保留文本内容
+                let text = line.textContent.trim() + '\n';
+                codeText += text;
+            });
+            
+            // 复制到剪贴板
+            navigator.clipboard.writeText(codeText).then(() => {
+                // 显示提示
+                const toast = document.getElementById('copy-toast');
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                toast.classList.add('translate-y-0', 'opacity-100');
+                
+                // 3秒后隐藏提示
+                setTimeout(() => {
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                }, 3000);
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
