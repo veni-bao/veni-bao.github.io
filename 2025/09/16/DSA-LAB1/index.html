@@ -13,14 +13,15 @@
     <meta name="description" content="I came, I saw, I conquered.,
 
 
-    
-    
-    矩阵子矩阵和计算 - C++代码展示
-    
-    
-    
-        tailwind.config = {
-            theme: {,"> 
+
+
+
+
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+   ,"> 
     <meta name="author" content="Jiahao Bao"> 
     <link rel="alternative" href="atom.xml" title="Jiahao&#39;s Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -32,14 +33,15 @@
     <meta name="twitter:description" content="I came, I saw, I conquered.,
 
 
-    
-    
-    矩阵子矩阵和计算 - C++代码展示
-    
-    
-    
-        tailwind.config = {
-            theme: {,"/>
+
+
+
+
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+   ,"/>
     
     
     
@@ -50,14 +52,15 @@
     <meta property="og:description" content="I came, I saw, I conquered.,
 
 
-    
-    
-    矩阵子矩阵和计算 - C++代码展示
-    
-    
-    
-        tailwind.config = {
-            theme: {,"/>
+
+
+
+
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+   ,"/>
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -99,413 +102,132 @@
 
         </div>
         <div class="content markdown">
-            <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>矩阵子矩阵和计算 - C++代码展示</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B82F6',
-                        secondary: '#10B981',
-                        dark: '#1E293B',
-                        light: '#F8FAFC',
-                        accent: '#8B5CF6'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace']
-                    }
+            <!-- 引入必要资源（如果主题未自带） -->
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Tailwind 配置（用 raw 包裹，防止 Markdown 解析） -->
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#3B82F6',
+                    secondary: '#10B981',
+                    dark: '#1E293B',
+                    light: '#F8FAFC',
+                    accent: '#8B5CF6'
+                },
+                fontFamily: {
+                    sans: ['Inter', 'system-ui', 'sans-serif'],
+                    mono: ['Fira Code', 'monospace']
                 }
             }
         }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .code-line {
-                @apply py-0.5 px-4 text-sm;
-            }
-            .code-line:hover {
-                @apply bg-dark/50;
-            }
-            .line-number {
-                @apply text-gray-400 text-right pr-4 select-none;
-            }
-            .keyword {
-                @apply text-blue-400;
-            }
-            .comment {
-                @apply text-green-400;
-            }
-            .string {
-                @apply text-yellow-300;
-            }
-            .function {
-                @apply text-purple-300;
-            }
-            .variable {
-                @apply text-cyan-300;
-            }
-            .number {
-                @apply text-orange-300;
-            }
-        }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800 min-h-screen">
-    <!-- 导航栏 -->
-    <header class="bg-white shadow-sm sticky top-0 z-10">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fa fa-code text-primary text-2xl"></i>
-                <h1 class="text-xl font-bold">C++ 代码展示</h1>
-            </div>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="#code" class="hover:text-primary transition-colors"><i class="fa fa-file-code-o mr-1"></i>代码</a></li>
-                    <li><a href="#explanation" class="hover:text-primary transition-colors"><i class="fa fa-book mr-1"></i>解释</a></li>
-                    <li><a href="#features" class="hover:text-primary transition-colors"><i class="fa fa-list-ul mr-1"></i>功能</a></li>
-                </ul>
-            </nav>
+    }
+</script>
+<style type="text/tailwindcss">
+    @layer utilities {
+        .code-line { @apply py-0.5 px-4 text-sm; }
+        .code-line:hover { @apply bg-dark/50; }
+        .line-number { @apply text-gray-400 text-right pr-4 select-none; }
+        .keyword { @apply text-blue-400; }
+        .comment { @apply text-green-400; }
+        .string { @apply text-yellow-300; }
+        .function { @apply text-purple-300; }
+        .variable { @apply text-cyan-300; }
+        .number { @apply text-orange-300; }
+    }
+</style>
+
+
+<!-- 代码信息卡片 -->
+<div class="bg-white rounded-xl shadow-md p-6 mb-8 transform hover:shadow-lg transition-shadow">
+    <div class="flex items-center mb-4">
+        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+            <i class="fa fa-calculator text-primary text-2xl"></i>
         </div>
-    </header>
+        <div>
+            <h2 class="text-2xl font-bold mb-1">矩阵子矩阵和计算</h2>
+            <p class="text-gray-600">高效计算二维矩阵中子矩阵元素之和的C++实现</p>
+        </div>
+    </div>
+    <div class="flex flex-wrap gap-3">
+        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"><i class="fa fa-tag mr-1"></i>C++</span>
+        <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full"><i class="fa fa-cube mr-1"></i>矩阵运算</span>
+        <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full"><i class="fa fa-clock-o mr-1"></i>前缀和算法</span>
+        <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full"><i class="fa fa-tachometer mr-1"></i>高效计算</span>
+    </div>
+</div>
 
-<pre><code>&lt;!-- 主要内容 --&gt;
-&lt;main class=&quot;container mx-auto px-4 py-8&quot;&gt;
-    &lt;!-- 代码信息卡片 --&gt;
-    &lt;div class=&quot;bg-white rounded-xl shadow-md p-6 mb-8 transform hover:shadow-lg transition-shadow&quot;&gt;
-        &lt;div class=&quot;flex items-center mb-4&quot;&gt;
-            &lt;div class=&quot;bg-primary/10 p-3 rounded-lg mr-4&quot;&gt;
-                &lt;i class=&quot;fa fa-calculator text-primary text-2xl&quot;&gt;&lt;/i&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-                &lt;h2 class=&quot;text-2xl font-bold mb-1&quot;&gt;矩阵子矩阵和计算&lt;/h2&gt;
-                &lt;p class=&quot;text-gray-600&quot;&gt;高效计算二维矩阵中子矩阵元素之和的C++实现&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;flex flex-wrap gap-3&quot;&gt;
-            &lt;span class=&quot;bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full&quot;&gt;&lt;i class=&quot;fa fa-tag mr-1&quot;&gt;&lt;/i&gt;C++&lt;/span&gt;
-            &lt;span class=&quot;bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full&quot;&gt;&lt;i class=&quot;fa fa-cube mr-1&quot;&gt;&lt;/i&gt;矩阵运算&lt;/span&gt;
-            &lt;span class=&quot;bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full&quot;&gt;&lt;i class=&quot;fa fa-clock-o mr-1&quot;&gt;&lt;/i&gt;前缀和算法&lt;/span&gt;
-            &lt;span class=&quot;bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full&quot;&gt;&lt;i class=&quot;fa fa-tachometer mr-1&quot;&gt;&lt;/i&gt;高效计算&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;!-- 代码展示区 --&gt;
-    &lt;section id=&quot;code&quot; class=&quot;mb-12&quot;&gt;
-        &lt;h2 class=&quot;text-2xl font-bold mb-6 flex items-center&quot;&gt;
-            &lt;i class=&quot;fa fa-file-code-o text-primary mr-2&quot;&gt;&lt;/i&gt;代码展示
-        &lt;/h2&gt;
-        &lt;div class=&quot;bg-dark rounded-xl shadow-lg overflow-hidden&quot;&gt;
-            &lt;!-- 代码工具栏 --&gt;
-            &lt;div class=&quot;bg-gray-800 px-4 py-3 flex justify-between items-center&quot;&gt;
-                &lt;div class=&quot;flex space-x-2&quot;&gt;
-                    &lt;div class=&quot;w-3 h-3 rounded-full bg-red-500&quot;&gt;&lt;/div&gt;
-                    &lt;div class=&quot;w-3 h-3 rounded-full bg-yellow-500&quot;&gt;&lt;/div&gt;
-                    &lt;div class=&quot;w-3 h-3 rounded-full bg-green-500&quot;&gt;&lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;text-gray-400 text-sm&quot;&gt;matrix_sum.cpp&lt;/div&gt;
-                &lt;button id=&quot;copy-btn&quot; class=&quot;text-gray-400 hover:text-white transition-colors text-sm flex items-center&quot;&gt;
-                    &lt;i class=&quot;fa fa-copy mr-1&quot;&gt;&lt;/i&gt;复制代码
-                &lt;/button&gt;
-            &lt;/div&gt;
-            
-            &lt;!-- 代码内容 --&gt;
-            &lt;div class=&quot;flex overflow-x-auto&quot;&gt;
-                &lt;!-- 行号 --&gt;
-                &lt;div class=&quot;bg-gray-800 text-gray-400 px-2&quot;&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;1&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;2&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;3&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;4&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;5&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;6&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;7&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;8&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;9&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;10&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;11&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;12&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;13&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;14&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;15&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;16&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;17&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;18&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;19&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;20&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;21&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;22&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;23&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;24&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;25&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;26&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;27&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;28&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;29&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;30&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;31&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;32&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;33&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;34&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;35&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;36&lt;/div&gt;
-                &lt;/div&gt;
-                
-                &lt;!-- 代码 --&gt;
-                &lt;div class=&quot;font-mono text-gray-200 flex-1&quot; id=&quot;code-content&quot;&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;lt;cstdio&amp;gt;&lt;/span&gt;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// int matrix[2000][2000];&lt;/span&gt;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;matrix&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;2001&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;2001&lt;/span&gt;];&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// int submetricsum[2000][2000];&lt;/span&gt;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;long long&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;2001&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;2001&lt;/span&gt;];&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;main&lt;/span&gt;()&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;&#123;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;n&lt;/span&gt;, &lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;, &lt;span class=&quot;variable&quot;&gt;q&lt;/span&gt;;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d%d&quot;&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;n&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;);&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;n&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;) &#123;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;) &#123;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;            &lt;span class=&quot;function&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;matrix&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;]);&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;        &#125;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &#125;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;) &#123;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &#125;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;n&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;) &#123;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;) &#123;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;            &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;] = &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] + &lt;span class=&quot;variable&quot;&gt;matrix&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;] + &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;] - &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;        &#125;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &#125;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;q&lt;/span&gt;);&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// int sum = 0;&lt;/span&gt;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;x&lt;/span&gt;,&lt;span class=&quot;variable&quot;&gt;y&lt;/span&gt;,&lt;span class=&quot;variable&quot;&gt;a&lt;/span&gt;,&lt;span class=&quot;variable&quot;&gt;b&lt;/span&gt;;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;q&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;) &#123;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// int x, y, a, b;&lt;/span&gt;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;long long&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;sum&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;function&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d %d %d %d&quot;&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;x&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;y&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;a&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;b&lt;/span&gt;);&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;variable&quot;&gt;sum&lt;/span&gt; = &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;x&lt;/span&gt;+&lt;span class=&quot;variable&quot;&gt;a&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;y&lt;/span&gt;+&lt;span class=&quot;variable&quot;&gt;b&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] - &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;x&lt;/span&gt;+&lt;span class=&quot;variable&quot;&gt;a&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;y&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] - &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;x&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;y&lt;/span&gt;+&lt;span class=&quot;variable&quot;&gt;b&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] + &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;x&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;y&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;function&quot;&gt;printf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%lld\n&quot;&lt;/span&gt;, &lt;span class=&quot;variable&quot;&gt;sum&lt;/span&gt;);&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &#125;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;
-                    &lt;div class=&quot;code-line&quot;&gt;&#125;&lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;!-- 代码解释 --&gt;
-    &lt;section id=&quot;explanation&quot; class=&quot;mb-12&quot;&gt;
-        &lt;h2 class=&quot;text-2xl font-bold mb-6 flex items-center&quot;&gt;
-            &lt;i class=&quot;fa fa-book text-primary mr-2&quot;&gt;&lt;/i&gt;代码解释
-        &lt;/h2&gt;
-        &lt;div class=&quot;bg-white rounded-xl shadow-md p-6&quot;&gt;
-            &lt;div class=&quot;space-y-6&quot;&gt;
-                &lt;div&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold mb-3 text-primary&quot;&gt;程序功能&lt;/h3&gt;
-                    &lt;p class=&quot;text-gray-700&quot;&gt;
-                        该程序实现了一个高效计算二维矩阵中子矩阵元素之和的功能。通过预处理构建前缀和矩阵，可以在O(1)时间内回答每个子矩阵和的查询，大大提高了多次查询时的效率。
-                    &lt;/p&gt;
-                &lt;/div&gt;
-                
-                &lt;div&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold mb-3 text-primary&quot;&gt;核心算法：二维前缀和&lt;/h3&gt;
-                    &lt;p class=&quot;text-gray-700 mb-4&quot;&gt;
-                        程序使用了二维前缀和算法，其核心思想是预先计算矩阵中每个位置到左上角的矩形区域的元素和，存储在submetricsum数组中。这样，任意子矩阵的和都可以通过前缀和数组中的四个值计算得到。
-                    &lt;/p&gt;
-                    &lt;div class=&quot;bg-gray-50 p-4 rounded-lg border border-gray-200&quot;&gt;
-                        &lt;p class=&quot;font-mono text-sm&quot;&gt;
-                            submetricsum[i][j] = 矩阵中从(1,1)到(i,j)的所有元素之和
-                        &lt;/p&gt;
-                        &lt;p class=&quot;font-mono text-sm mt-2&quot;&gt;
-                            计算公式：submetricsum[i][j] = submetricsum[i][j-1] + matrix[i][j] + submetricsum[i-1][j] - submetricsum[i-1][j-1]
-                        &lt;/p&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                
-                &lt;div&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold mb-3 text-primary&quot;&gt;查询计算&lt;/h3&gt;
-                    &lt;p class=&quot;text-gray-700 mb-4&quot;&gt;
-                        对于查询从(x,y)开始，大小为a×b的子矩阵和，计算公式为：
-                    &lt;/p&gt;
-                    &lt;div class=&quot;bg-gray-50 p-4 rounded-lg border border-gray-200&quot;&gt;
-                        &lt;p class=&quot;font-mono text-sm&quot;&gt;
-                            sum = submetricsum[x+a-1][y+b-1] - submetricsum[x+a-1][y-1] - submetricsum[x-1][y+b-1] + submetricsum[x-1][y-1]
-                        &lt;/p&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                
-                &lt;div&gt;
-                    &lt;h3 class=&quot;text-xl font-semibold mb-3 text-primary&quot;&gt;数据结构&lt;/h3&gt;
-                    &lt;ul class=&quot;list-disc pl-5 text-gray-700 space-y-2&quot;&gt;
-                        &lt;li&gt;&lt;span class=&quot;font-medium&quot;&gt;matrix[2001][2001]&lt;/span&gt;：存储原始矩阵数据，使用1-based索引&lt;/li&gt;
-                        &lt;li&gt;&lt;span class=&quot;font-medium&quot;&gt;submetricsum[2001][2001]&lt;/span&gt;：存储前缀和矩阵，使用long long类型防止溢出&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;!-- 功能特点 --&gt;
-    &lt;section id=&quot;features&quot; class=&quot;mb-12&quot;&gt;
-        &lt;h2 class=&quot;text-2xl font-bold mb-6 flex items-center&quot;&gt;
-            &lt;i class=&quot;fa fa-list-ul text-primary mr-2&quot;&gt;&lt;/i&gt;功能特点
-        &lt;/h2&gt;
-        &lt;div class=&quot;grid grid-cols-1 md:grid-cols-2 gap-6&quot;&gt;
-            &lt;div class=&quot;bg-white rounded-xl shadow-md p-6 transform hover:-translate-y-1 transition-transform&quot;&gt;
-                &lt;div class=&quot;text-primary text-3xl mb-4&quot;&gt;
-                    &lt;i class=&quot;fa fa-tachometer&quot;&gt;&lt;/i&gt;
-                &lt;/div&gt;
-                &lt;h3 class=&quot;text-xl font-semibold mb-2&quot;&gt;高效查询&lt;/h3&gt;
-                &lt;p class=&quot;text-gray-600&quot;&gt;
-                    通过O(n×m)的预处理，将每个子矩阵和的查询时间降低到O(1)，特别适合需要多次查询的场景。
-                &lt;/p&gt;
-            &lt;/div&gt;
-            
-            &lt;div class=&quot;bg-white rounded-xl shadow-md p-6 transform hover:-translate-y-1 transition-transform&quot;&gt;
-                &lt;div class=&quot;text-primary text-3xl mb-4&quot;&gt;
-                    &lt;i class=&quot;fa fa-shield&quot;&gt;&lt;/i&gt;
-                &lt;/div&gt;
-                &lt;h3 class=&quot;text-xl font-semibold mb-2&quot;&gt;防止溢出&lt;/h3&gt;
-                &lt;p class=&quot;text-gray-600&quot;&gt;
-                    使用long long类型存储前缀和，有效防止了大矩阵元素和可能导致的整数溢出问题。
-                &lt;/p&gt;
-            &lt;/div&gt;
-            
-            &lt;div class=&quot;bg-white rounded-xl shadow-md p-6 transform hover:-translate-y-1 transition-transform&quot;&gt;
-                &lt;div class=&quot;text-primary text-3xl mb-4&quot;&gt;
-                    &lt;i class=&quot;fa fa-code-fork&quot;&gt;&lt;/i&gt;
-                &lt;/div&gt;
-                &lt;h3 class=&quot;text-xl font-semibold mb-2&quot;&gt;清晰的代码结构&lt;/h3&gt;
-                &lt;p class=&quot;text-gray-600&quot;&gt;
-                    代码逻辑清晰，分为矩阵输入、前缀和计算和查询处理三个主要部分，易于理解和维护。
-                &lt;/p&gt;
-            &lt;/div&gt;
-            
-            &lt;div class=&quot;bg-white rounded-xl shadow-md p-6 transform hover:-translate-y-1 transition-transform&quot;&gt;
-                &lt;div class=&quot;text-primary text-3xl mb-4&quot;&gt;
-                    &lt;i class=&quot;fa fa-expand&quot;&gt;&lt;/i&gt;
-                &lt;/div&gt;
-                &lt;h3 class=&quot;text-xl font-semibold mb-2&quot;&gt;足够的空间&lt;/h3&gt;
-                &lt;p class=&quot;text-gray-600&quot;&gt;
-                    矩阵大小设置为2001×2001，可以处理最大2000×2000的输入矩阵，满足大多数场景需求。
-                &lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;!-- 运行示例 --&gt;
-    &lt;section id=&quot;example&quot; class=&quot;mb-12&quot;&gt;
-        &lt;h2 class=&quot;text-2xl font-bold mb-6 flex items-center&quot;&gt;
-            &lt;i class=&quot;fa fa-play-circle text-primary mr-2&quot;&gt;&lt;/i&gt;运行示例
-        &lt;/h2&gt;
-        &lt;div class=&quot;bg-white rounded-xl shadow-md p-6&quot;&gt;
-            &lt;div class=&quot;grid grid-cols-1 md:grid-cols-2 gap-6&quot;&gt;
-                &lt;div&gt;
-                    &lt;h3 class=&quot;text-lg font-semibold mb-3 text-gray-800&quot;&gt;输入示例&lt;/h3&gt;
-                    &lt;div class=&quot;bg-gray-100 p-4 rounded-lg font-mono text-sm&quot;&gt;
-                        &lt;p&gt;3 3&lt;/p&gt;
-                        &lt;p&gt;1 2 3&lt;/p&gt;
-                        &lt;p&gt;4 5 6&lt;/p&gt;
-                        &lt;p&gt;7 8 9&lt;/p&gt;
-                        &lt;p&gt;2&lt;/p&gt;
-                        &lt;p&gt;1 1 2 2&lt;/p&gt;
-                        &lt;p&gt;2 2 2 2&lt;/p&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div&gt;
-                    &lt;h3 class=&quot;text-lg font-semibold mb-3 text-gray-800&quot;&gt;输出示例&lt;/h3&gt;
-                    &lt;div class=&quot;bg-gray-100 p-4 rounded-lg font-mono text-sm&quot;&gt;
-                        &lt;p&gt;12&lt;/p&gt;
-                        &lt;p&gt;28&lt;/p&gt;
-                    &lt;/div&gt;
-                    &lt;p class=&quot;text-gray-600 mt-3 text-sm&quot;&gt;
-                        解释：第一个查询计算(1,1)到(2,2)的子矩阵和：1+2+4+5=12&lt;br&gt;
-                        第二个查询计算(2,2)到(3,3)的子矩阵和：5+6+8+9=28
-                    &lt;/p&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/section&gt;
-&lt;/main&gt;
-
-&lt;!-- 页脚 --&gt;
-&lt;footer class=&quot;bg-dark text-gray-400 py-8&quot;&gt;
-    &lt;div class=&quot;container mx-auto px-4&quot;&gt;
-        &lt;div class=&quot;flex flex-col md:flex-row justify-between items-center&quot;&gt;
-            &lt;div class=&quot;mb-4 md:mb-0&quot;&gt;
-                &lt;div class=&quot;flex items-center&quot;&gt;
-                    &lt;i class=&quot;fa fa-code text-primary text-xl mr-2&quot;&gt;&lt;/i&gt;
-                    &lt;span class=&quot;font-bold text-white&quot;&gt;C++ 代码展示&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;p class=&quot;text-sm mt-1&quot;&gt;矩阵子矩阵和计算的实现与解析&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;flex space-x-4&quot;&gt;
-                &lt;a href=&quot;#&quot; class=&quot;hover:text-primary transition-colors&quot;&gt;&lt;i class=&quot;fa fa-github text-xl&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-                &lt;a href=&quot;#&quot; class=&quot;hover:text-primary transition-colors&quot;&gt;&lt;i class=&quot;fa fa-stack-overflow text-xl&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-                &lt;a href=&quot;#&quot; class=&quot;hover:text-primary transition-colors&quot;&gt;&lt;i class=&quot;fa fa-linkedin text-xl&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;border-t border-gray-700 mt-6 pt-6 text-center text-sm&quot;&gt;
-            &amp;copy; 2023 代码展示页面 | 使用 Tailwind CSS 构建
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/footer&gt;
-
-&lt;!-- 复制成功提示 --&gt;
-&lt;div id=&quot;copy-toast&quot; class=&quot;fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 flex items-center&quot;&gt;
-    &lt;i class=&quot;fa fa-check mr-2&quot;&gt;&lt;/i&gt;
-    &lt;span&gt;代码已复制到剪贴板&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-    // 复制代码功能
-    document.getElementById(&#39;copy-btn&#39;).addEventListener(&#39;click&#39;, function() &#123;
-        // 提取代码文本
-        const codeLines = document.querySelectorAll(&#39;#code-content .code-line&#39;);
-        let codeText = &#39;&#39;;
-        codeLines.forEach(line =&gt; &#123;
-            // 移除HTML标签，只保留文本内容
-            let text = line.textContent.trim() + &#39;\n&#39;;
-            codeText += text;
-        &#125;);
+<!-- 代码展示区 -->
+<section id="code" class="mb-12">
+    <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <i class="fa fa-file-code-o text-primary mr-2"></i>代码展示
+    </h2>
+    <div class="bg-dark rounded-xl shadow-lg overflow-hidden">
+        <!-- 代码工具栏 -->
+        <div class="bg-gray-800 px-4 py-3 flex justify-between items-center">
+            <div class="flex space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <div class="text-gray-400 text-sm">matrix_sum.cpp</div>
+            <button id="copy-btn" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center">
+                <i class="fa fa-copy mr-1"></i>复制代码
+            </button>
+        </div>
         
-        // 复制到剪贴板
-        navigator.clipboard.writeText(codeText).then(() =&gt; &#123;
-            // 显示提示
-            const toast = document.getElementById(&#39;copy-toast&#39;);
-            toast.classList.remove(&#39;translate-y-20&#39;, &#39;opacity-0&#39;);
-            toast.classList.add(&#39;translate-y-0&#39;, &#39;opacity-100&#39;);
-            
-            // 3秒后隐藏提示
-            setTimeout(() =&gt; &#123;
-                toast.classList.remove(&#39;translate-y-0&#39;, &#39;opacity-100&#39;);
-                toast.classList.add(&#39;translate-y-20&#39;, &#39;opacity-0&#39;);
-            &#125;, 3000);
-        &#125;);
-    &#125;);
-
-    // 平滑滚动
-    document.querySelectorAll(&#39;a[href^=&quot;#&quot;]&#39;).forEach(anchor =&gt; &#123;
-        anchor.addEventListener(&#39;click&#39;, function (e) &#123;
-            e.preventDefault();
-            document.querySelector(this.getAttribute(&#39;href&#39;)).scrollIntoView(&#123;
-                behavior: &#39;smooth&#39;
-            &#125;);
-        &#125;);
-    &#125;);
-&lt;/script&gt;
+<pre><code>    &lt;!-- 代码内容 --&gt;
+    &lt;div class=&quot;flex overflow-x-auto&quot;&gt;
+        &lt;!-- 行号 --&gt;
+        &lt;div class=&quot;bg-gray-800 text-gray-400 px-2&quot;&gt;
+            &lt;div class=&quot;code-line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;5&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;10&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;15&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;20&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;25&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;30&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;36&lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- 代码 --&gt;
+        &lt;div class=&quot;font-mono text-gray-200 flex-1&quot; id=&quot;code-content&quot;&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;lt;cstdio&amp;gt;&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// int matrix[2000][2000];&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;matrix&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;2001&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;2001&lt;/span&gt;];&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// int submetricsum[2000][2000];&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;long long&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;2001&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;2001&lt;/span&gt;];&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;main&lt;/span&gt;()&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;n&lt;/span&gt;, &lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;, &lt;span class=&quot;variable&quot;&gt;q&lt;/span&gt;;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d%d&quot;&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;n&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;);&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;n&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;) &#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;) &#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;            &lt;span class=&quot;function&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;matrix&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;]);&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &#125;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &#125;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;) &#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &#125;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;n&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;) &#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;) &#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;            &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;] = &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] + &lt;span class=&quot;variable&quot;&gt;matrix&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;] + &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;] - &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &#125;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &#125;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;q&lt;/span&gt;);&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// int sum = 0;&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;x&lt;/span&gt;,&lt;span class=&quot;variable&quot;&gt;y&lt;/span&gt;,&lt;span class=&quot;variable&quot;&gt;a&lt;/span&gt;,&lt;span class=&quot;variable&quot;&gt;b&lt;/span&gt;;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;q&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;) &#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// int x, y, a, b;&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;long long&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;sum&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;function&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d %d %d %d
 </code></pre>
-</body>
-</html>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
