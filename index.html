@@ -1,329 +1,1268 @@
-
 <!DOCTYPE html>
-<html lang="en" class="loading">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Jiahao&#39;s Blog - veni vidi vici</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="I came, I saw, I conquered.,"> 
-    <meta name="author" content="Jiahao Bao"> 
-    <link rel="alternative" href="atom.xml" title="Jiahao&#39;s Blog" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
-    
-    
-    
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Jiahao&#39;s Blog - veni vidi vici"/>
-    <meta name="twitter:description" content="I came, I saw, I conquered.,"/>
-    
-    
-    
-    
-    <meta property="og:site_name" content="Jiahao&#39;s Blog"/>
-    <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Jiahao&#39;s Blog - veni vidi vici"/>
-    <meta property="og:description" content="I came, I saw, I conquered.,"/>
-    
-<link rel="stylesheet" href="/css/diaspora.css">
+  <meta charset="utf-8">
+  
+  <title>Jiahao&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I came, I saw, I conquered.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jiahao&#39;s Blog">
+<meta property="og:url" content="http://veni-bao.github.io/index.html">
+<meta property="og:site_name" content="Jiahao&#39;s Blog">
+<meta property="og:description" content="I came, I saw, I conquered.">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Jiahao Bao">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Jiahao&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/http://oayoilchh.bkt.clouddn.com/2016/07/27/18:05:26%20">
+  
+  
+      
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
 
-    <script>window.searchDbPath = "/search.xml";</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 <meta name="generator" content="Hexo 7.3.0"></head>
-
-<body class="loading">
-    <span id="config-title" style="display:none">Jiahao&#39;s Blog</span>
-    <div id="loader"></div>
-    <div class="nav">
-    <ul id="menu-menu" class="menu">
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="img/head.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
         
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="//" title="首页" target="_blank" rel="noopener">首页</a>
-        </li>
         
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/categories/" title="分类" target="_blank" rel="noopener">分类</a>
-        </li>
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
         
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/tags/" title="标签" target="_blank" rel="noopener">标签</a>
-        </li>
         
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/archives/" title="归档" target="_blank" rel="noopener">归档</a>
-        </li>
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
         
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/about/" title="关于" target="_blank" rel="noopener">关于</a>
-        </li>
         
-    </ul>
-	<span class="target"></span>
-	<center>
-	<div class="hitokoto">
-		<span class="typed" id="hitokoto" data-st="true"></span>
-	</div>
-	</center>
-	
-	<p class="footerlinks">
-		<a href="#" class="iconfont icon-null"></a>
-		
-            <a href="/" title="facebook" class="iconfont icon-facebook" target="_blank" rel="noopener"> </a>
-        
-            <a href="/" title="twitter" class="iconfont icon-twitter" target="_blank" rel="noopener"> </a>
-        
-            <a href="/" title="github" class="iconfont icon-github" target="_blank" rel="noopener"> </a>
-        
-            <a href="/img/logo.png" title="wechat" class="iconfont icon-wechat" target="_blank" rel="noopener"> </a>
-        
-            <a href="mailto:xxxx@gmail.com" title="email" class="iconfont icon-email" target="_blank" rel="noopener"> </a>
-        
-		<a href="#" class="iconfont icon-null"></a>
-	</p>
-	
-    <p id="copyright">
-        &copy; 2025 Jiahao Bao.
-        <span> | </span>Powered by <a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        <span> | </span>Theme <a href="https://github.com/Fechin/hexo-theme-diaspora" title="Diaspora" target="_blank" rel="noopener">Diaspora</a> by Fechin
-		
-		<span> | </span><a rel="nofollow" href="http://www.beian.miit.gov.cn" target="_blank">冀ICP备xxxxxxx号</a>
-		
-    </p>
-</div>
-
-<div id="container">
-    
-<div id="screen">
-    <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="/img/welcome-cover.jpg" id="cover" crossorigin="anonymous" width="1920" height="1080">
-        </div>
-    </div>
-    <div id="vibrant">
-        <svg viewbox="0 0 2880 1620" height="100%" preserveaspectratio="xMaxYMax slice">
-            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg>
-        <div></div>
-    </div>
-    <div id="header">
-        <div>
-            <a class="image-logo" href="/"></a>
-			
-            <div class="iconfont icon-menu switchmenu"></div>
-        </div>
-    </div>
-    
-    <div id="post0">
-        <p>九月 16, 2025</p>
-        <h2><a href="/2025/09/16/DSA-LAB1/" title="DSA-LAB1" class="posttitle">DSA-LAB1</a></h2>
-        <p class="summary">
-
-
-
-
-
-
-    tailwind.config = {
-        theme: {
-         ...</p>
-    </div>
-    
-</div>
-
-    <div id="primary">
-        
-<div class="post">
-    <a href="/2025/09/16/solution/" title="solution">
-        <img src="/img/cover.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>九月 16, 2025</p>
-        <h3><a href="/2025/09/16/solution/" title="solution" class="posttitle">solution</a></h3>
-        <p></p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2025/06/18/ai/" title="Deeplearning">
-        <img src="/img/cover2.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>六月 18, 2025</p>
-        <h3><a href="/2025/06/18/ai/" title="Deeplearning" class="posttitle">Deeplearning</a></h3>
-        <p></p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2025/03/31/TCP/" title="TCP">
-        <img src="/img/cover2.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>三月 31, 2025</p>
-        <h3><a href="/2025/03/31/TCP/" title="TCP" class="posttitle">TCP</a></h3>
-        <p>TCP chatroomThis is the first assignment of “Computer Network: a top- down ap...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2025/03/12/HPC/" title="HPC">
-        <img src="/img/cover2.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>三月 12, 2025</p>
-        <h3><a href="/2025/03/12/HPC/" title="HPC" class="posttitle">HPC</a></h3>
-        <p>High Performance Computing3&#x2F;26Ring_Allreduce：define a MPI_Allreduce usin...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2025/03/11/DFT/" title="DFT">
-        <img src="/img/cover3.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>三月 11, 2025</p>
-        <h3><a href="/2025/03/11/DFT/" title="DFT" class="posttitle">DFT</a></h3>
-        <p>DFT learning note2025&#x2F;3&#x2F;11Always leave some note when learning. Thi...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2025/03/11/vtuber/" title="vtuber">
-        <img src="/img/cover2.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>三月 11, 2025</p>
-        <h3><a href="/2025/03/11/vtuber/" title="vtuber" class="posttitle">vtuber</a></h3>
-        <p>OpenLLM-VtuberI’d like to create an avatar of Shorekeeper using the github It...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2025/03/06/Tools/" title="Tools">
-        <img src="/img/cover3.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>三月 06, 2025</p>
-        <h3><a href="/2025/03/06/Tools/" title="Tools" class="posttitle">Tools</a></h3>
-        <p>Here are some useful links for post writing tricks
-tags provides grammar for ...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2025/03/05/Goal/" title="Goal">
-        <img src="/img/cover3.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>三月 05, 2025</p>
-        <h3><a href="/2025/03/05/Goal/" title="Goal" class="posttitle">Goal</a></h3>
-        <p>My GoalsCurrently I’m studying in Xv Yong’s group, and learning DFT calculati...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2025/03/04/My-First-Post/" title="My First Post">
-        <img src="/img/cover4.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>三月 04, 2025</p>
-        <h3><a href="/2025/03/04/My-First-Post/" title="My First Post" class="posttitle">My First Post</a></h3>
-        <p>Hi！This is my first post!This is my first time to create a blog, and I can’t ...</p>
-    </div>
-</div>
-
-
-    </div>
-    
-    <div id="pager"><a href="/page/2/" class="more">加载更多</a></div>
-    
-</div>
-<div id="preview"></div>
-
-
-
-</body>
-
-
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/typed.js"></script>
-<script src="/js/diaspora.js"></script>
-
-
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-
-
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
                     </div>
                 </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
             </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  target="_blank" rel="noopener" href="http://bestwing.me">博客首页</a></li>
+                        
+                            <li><a  href="/archives">文章归档</a></li>
+                        
+                            <li><a  href="/CTFStudy">学习导航</a></li>
+                        
+                            <li><a  href="/PWNABLE">PWNABLE</a></li>
+                        
+                            <li><a  href="/resume">个人简历</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail"  target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/WinMin" title="github">github</a>
+                            
+                                <a class="fl zhihu"  target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-S/" style="font-size: 10px;">C.S.</a> <a href="/tags/DFT/" style="font-size: 10px;">DFT</a> <a href="/tags/DSA/" style="font-size: 10px;">DSA</a> <a href="/tags/HPC/" style="font-size: 10px;">HPC</a> <a href="/tags/Physics/" style="font-size: 10px;">Physics</a> <a href="/tags/Quantum/" style="font-size: 10px;">Quantum</a> <a href="/tags/cs/" style="font-size: 10px;">cs</a> <a href="/tags/interest/" style="font-size: 10px;">interest</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shorekeeper/" style="font-size: 10px;">shorekeeper</a> <a href="/tags/vtuber/" style="font-size: 10px;">vtuber</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://ring3.xyz/">Yllen</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://mxny.org/">麦香浓郁</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://whereisk0shl.top/">K0sh1</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.ycjcl.cc/">信鑫</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://bystudent.com/">ByStundet表哥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.jarviswang.me/">汪神_Jarvis</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sh3ll.me/">Chu</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.hackfun.org/">4ido10n</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/iamstudy">L3m0n</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://o0xmuhe.me/">muhe</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.nuptzj.cn/">_画船听雨</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.virzz.com/index.html">Virink</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.sqlsec.com/">国光</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bodkin.ren/">老锥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cizel.cn/">C1zel</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://1phan.cc">1phan</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.liuil.top/">liuil</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/Ox9A82/">Ox9A82</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://burnegg.com/">burnegg</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://jwrsec.cn/">jwr-sec</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sudalover.cn/">苏打</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.binklac.com">VeroFess</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bendawang.site/">bendawang</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://weeklyalgo.codes/">hook</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.flier.net.cn/">Flier&#39;blog</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.mutepig.club">mutepig</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://blog.iret.xyz/list.aspx">Silver</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://simp1e.leanote.com/">Simple</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://processor.pub/">Processor</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">一只淹死在二进制海洋里的二进制狗</div>
+                </section>
+                
             </div>
         </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a target="_blank" rel="noopener" href="http://bestwing.me">博客首页</a></li>
+                
+                    <li><a href="/archives">文章归档</a></li>
+                
+                    <li><a href="/CTFStudy">学习导航</a></li>
+                
+                    <li><a href="/PWNABLE">PWNABLE</a></li>
+                
+                    <li><a href="/resume">个人简历</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/WinMin" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-DSA-LAB1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/09/16/DSA-LAB1/" class="article-date">
+      <time datetime="2025-09-16T06:02:33.000Z" itemprop="datePublished">2025-09-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/09/16/DSA-LAB1/">DSA-LAB1</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <!-- 引入必要资源（如果主题未自带） -->
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Tailwind 配置（用 raw 包裹，防止 Markdown 解析） -->
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#3B82F6',
+                    secondary: '#10B981',
+                    dark: '#1E293B',
+                    light: '#F8FAFC',
+                    accent: '#8B5CF6'
+                },
+                fontFamily: {
+                    sans: ['Inter', 'system-ui', 'sans-serif'],
+                    mono: ['Fira Code', 'monospace']
+                }
+            }
+        }
+    }
+</script>
+<style type="text/tailwindcss">
+    @layer utilities {
+        .code-line { @apply py-0.5 px-4 text-sm; }
+        .code-line:hover { @apply bg-dark/50; }
+        .line-number { @apply text-gray-400 text-right pr-4 select-none; }
+        .keyword { @apply text-blue-400; }
+        .comment { @apply text-green-400; }
+        .string { @apply text-yellow-300; }
+        .function { @apply text-purple-300; }
+        .variable { @apply text-cyan-300; }
+        .number { @apply text-orange-300; }
+    }
+</style>
+
+
+<!-- 代码信息卡片 -->
+<div class="bg-white rounded-xl shadow-md p-6 mb-8 transform hover:shadow-lg transition-shadow">
+    <div class="flex items-center mb-4">
+        <div class="bg-primary/10 p-3 rounded-lg mr-4">
+            <i class="fa fa-calculator text-primary text-2xl"></i>
+        </div>
+        <div>
+            <h2 class="text-2xl font-bold mb-1">矩阵子矩阵和计算</h2>
+            <p class="text-gray-600">高效计算二维矩阵中子矩阵元素之和的C++实现</p>
+        </div>
+    </div>
+    <div class="flex flex-wrap gap-3">
+        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"><i class="fa fa-tag mr-1"></i>C++</span>
+        <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full"><i class="fa fa-cube mr-1"></i>矩阵运算</span>
+        <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full"><i class="fa fa-clock-o mr-1"></i>前缀和算法</span>
+        <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full"><i class="fa fa-tachometer mr-1"></i>高效计算</span>
     </div>
 </div>
 
+<!-- 代码展示区 -->
+<section id="code" class="mb-12">
+    <h2 class="text-2xl font-bold mb-6 flex items-center">
+        <i class="fa fa-file-code-o text-primary mr-2"></i>代码展示
+    </h2>
+    <div class="bg-dark rounded-xl shadow-lg overflow-hidden">
+        <!-- 代码工具栏 -->
+        <div class="bg-gray-800 px-4 py-3 flex justify-between items-center">
+            <div class="flex space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <div class="text-gray-400 text-sm">matrix_sum.cpp</div>
+            <button id="copy-btn" class="text-gray-400 hover:text-white transition-colors text-sm flex items-center">
+                <i class="fa fa-copy mr-1"></i>复制代码
+            </button>
+        </div>
+        
+<pre><code>    &lt;!-- 代码内容 --&gt;
+    &lt;div class=&quot;flex overflow-x-auto&quot;&gt;
+        &lt;!-- 行号 --&gt;
+        &lt;div class=&quot;bg-gray-800 text-gray-400 px-2&quot;&gt;
+            &lt;div class=&quot;code-line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;5&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;10&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;15&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;20&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;25&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;30&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;code-line&quot;&gt;36&lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- 代码 --&gt;
+        &lt;div class=&quot;font-mono text-gray-200 flex-1&quot; id=&quot;code-content&quot;&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;lt;cstdio&amp;gt;&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// int matrix[2000][2000];&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;matrix&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;2001&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;2001&lt;/span&gt;];&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// int submetricsum[2000][2000];&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;long long&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;2001&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;2001&lt;/span&gt;];&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;main&lt;/span&gt;()&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;n&lt;/span&gt;, &lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;, &lt;span class=&quot;variable&quot;&gt;q&lt;/span&gt;;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d%d&quot;&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;n&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;);&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;n&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;) &#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;) &#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;            &lt;span class=&quot;function&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;matrix&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;]);&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &#125;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &#125;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;) &#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &#125;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;n&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;) &#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;m&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;) &#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;            &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;] = &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt; - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] + &lt;span class=&quot;variable&quot;&gt;matrix&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;] + &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;] - &lt;span class=&quot;variable&quot;&gt;submetricsum&lt;/span&gt;[&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;][&lt;span class=&quot;variable&quot;&gt;j&lt;/span&gt;-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;];&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &#125;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &#125;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d&quot;&lt;/span&gt;, &amp;amp;&lt;span class=&quot;variable&quot;&gt;q&lt;/span&gt;);&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// int sum = 0;&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;x&lt;/span&gt;,&lt;span class=&quot;variable&quot;&gt;y&lt;/span&gt;,&lt;span class=&quot;variable&quot;&gt;a&lt;/span&gt;,&lt;span class=&quot;variable&quot;&gt;b&lt;/span&gt;;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; &lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt; &amp;lt;= &lt;span class=&quot;variable&quot;&gt;q&lt;/span&gt;; ++&lt;span class=&quot;variable&quot;&gt;i&lt;/span&gt;) &#123;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// int x, y, a, b;&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;long long&lt;/span&gt; &lt;span class=&quot;variable&quot;&gt;sum&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;
+            &lt;div class=&quot;code-line&quot;&gt;        &lt;span class=&quot;function&quot;&gt;scanf&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;%d %d %d %d
+</code></pre>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/CS/">CS</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DSA/" rel="tag">DSA</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
 
 
 
 
+
+
+
+
+  
+    <article id="post-solution" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/09/16/solution/" class="article-date">
+      <time datetime="2025-09-16T06:01:26.000Z" itemprop="datePublished">2025-09-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/09/16/solution/">solution</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ai" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/06/18/ai/" class="article-date">
+      <time datetime="2025-06-18T10:38:01.000Z" itemprop="datePublished">2025-06-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/06/18/ai/">Deeplearning</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cs/" rel="tag">cs</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-TCP" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/03/31/TCP/" class="article-date">
+      <time datetime="2025-03-31T06:16:13.000Z" itemprop="datePublished">2025-03-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/31/TCP/">TCP</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="TCP-chatroom"><a href="#TCP-chatroom" class="headerlink" title="TCP chatroom"></a>TCP chatroom</h2><p>This is the first assignment of “Computer Network: a top- down approach” course. It’s a simple TCP chatroom. The server can accept multiple clients and exchange messages and files with them. The server and client are implemented by python.</p>
+<h2 id="Socket-Programming-Lab-Report"><a href="#Socket-Programming-Lab-Report" class="headerlink" title="Socket Programming Lab Report"></a>Socket Programming Lab Report</h2><p><strong>Name:</strong> Bao<br><strong>Student ID:</strong> xxxxxxxxxx<br><strong>Date:</strong> 29&#x2F;03</p>
+<hr>
+<h3 id="1-Experiment-Objectives"><a href="#1-Experiment-Objectives" class="headerlink" title="1.Experiment Objectives"></a>1.Experiment Objectives</h3><ul>
+<li>To understand the basics of socket programming</li>
+<li>To implement server-client architecture using TCP protocol.</li>
+<li>To implement multi-thread server using TCP protocol.</li>
+</ul>
+<h3 id="2-Experimental-Environment"><a href="#2-Experimental-Environment" class="headerlink" title="2.Experimental Environment"></a>2.Experimental Environment</h3><ul>
+<li><strong>Programming Language:</strong> Python 3.12.4</li>
+<li><strong>Libraries:</strong> socket and threading module in python</li>
+<li><strong>Tool:</strong> Wireshake for packet capture</li>
+</ul>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>For single thread TCP part,</p>
+<h5 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./TCP/</span><br><span class="line">python server.py 18080 input</span><br></pre></td></tr></table></figure>
+
+<p>Options:</p>
+<ul>
+<li><code>18080</code>: Server listening port (default:18080)</li>
+<li><code>input</code>: Server response type (default:upper), including “input” and “upper”</li>
+</ul>
+<h5 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./TCP</span><br><span class="line">python client.py 127.0.0.1 18080</span><br></pre></td></tr></table></figure>
+
+<p>Options:</p>
+<ul>
+<li><code>127.0.0.1</code> server IP to connect to (default:127.0.0.1)</li>
+<li><code>18080</code> server port to connect to (default:18080)</li>
+</ul>
+<p>For multiple thread TCP server part</p>
+<h5 id="Server-1"><a href="#Server-1" class="headerlink" title="Server"></a>Server</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./Threading/</span><br><span class="line">python server.py 18080 upper 10</span><br></pre></td></tr></table></figure>
+
+<p>Options:</p>
+<ul>
+<li><code>18080</code>: Server listening port (default:18080)</li>
+<li><code>10</code>: the maximum number of clients the server can accept (default:10)</li>
+<li><code>upper</code>: Server response mode (default:upper), including “input” and “upper”</li>
+</ul>
+<h5 id="Client-1"><a href="#Client-1" class="headerlink" title="Client"></a>Client</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./Threading/</span><br><span class="line">python client.py client0 127.0.0.1 18080</span><br></pre></td></tr></table></figure>
+
+<p>And for a new client</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./Threading/</span><br><span class="line">python client.py client1 127.0.0.1 18080</span><br></pre></td></tr></table></figure>
+
+<p>And so on…<br>Options:</p>
+<ul>
+<li><code>127.0.0.1</code> server IP to connect to (default:127.0.0.1)</li>
+<li><code>18080</code> server port to connect to (default:18080)</li>
+<li><code>client1</code> client name (default:client0), necessary for more than 1 clients, to separately manage the files different clients own.</li>
+</ul>
+<h4 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h4><ul>
+<li>All above commands are executed in the root directory of the project, and you can run without any arguments to use the default values.</li>
+<li>Server is set a time out limit of 120, which is not necessary. It’s just to easily quit the server when it’s not being used.</li>
+<li>Client is set a time out limit of 30.</li>
+</ul>
+<p>After connection is set up, the client and server go in a circle of “receive - send”. User repeatedly give commands through client.<br>There are 3 types of input commands:</p>
+<ul>
+<li>ask for file:someFile :require server sending someFile to the folder client manages</li>
+<li>send file:someFile :send local file someFile to folder “server” that server manages</li>
+<li>exit :quit connction with server</li>
+<li>else: send the input message encoded by ‘UTF-8’ to server, and receive reponse from server. The argument <code>responseType</code> in class TCP_Server&#x2F;Multithread_Server determines how server response. <code>responseType = upper</code> automatically return the total uppercase of client massage, <code>responseType = input</code> require server input response by hand.</li>
+</ul>
+<h3 id="3-Experimental-Procedure"><a href="#3-Experimental-Procedure" class="headerlink" title="3.Experimental Procedure"></a>3.Experimental Procedure</h3><p>Using Wireshake, we can capture the packets sent between client and server.<br>Because multi-thread version totally inludes functions of single thread version, I will only show the result of multi thread version here.<br>The following figures shows the example:<br><img src="/images/cmd.png" alt="cmd"><br>During the connection, the WireShark capture the packets sent between client and server.<br>When the connections are setup:<br><img src="/images/shark1.png" alt="capture"><br>When client0 exits and client1 is receiving shore.jpg from server:<br><img src="/images/shark2.png" alt="result"><br>I didn’t show the whole process because shore.jpg takes too many packets to be sent.</p>
+<p>For more test, the .&#x2F;server&#x2F; has 出师表.txt, the .&#x2F;client has keep.jpg.</p>
+<h3 id="4-Experiment-Analysis"><a href="#4-Experiment-Analysis" class="headerlink" title="4.Experiment Analysis"></a>4.Experiment Analysis</h3><p>It can be easily found that “3-way” hand shake happens. Looking at the wireshark captures, before the first request of port 9461 and the connection of port 9465, there are 3 packets sent between client and server:No.109,110,111. In 109, client0 sends a SYN packet to server, and in 110, server sends a SYN-ACK packet to client0, and in 111, client0 sends a ACK packet to server. After that, the connection is established. Of course, the same thing happens for client1, which is demonstrated in No.144,145,146.</p>
+<h3 id="5-Experiment-Summary"><a href="#5-Experiment-Summary" class="headerlink" title="5.Experiment Summary"></a>5.Experiment Summary</h3><p>TCP can be visualized like the following picture:<br><img src="/./img/fig.png" alt="TCP"><br>With the experiment, we can better under stand why TCP is reliable.</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/network/">network</a><a class="article-category-link" href="/categories/network/C-S/">C.S.</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/network/" rel="tag">network</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-HPC" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/03/12/HPC/" class="article-date">
+      <time datetime="2025-03-12T11:47:55.000Z" itemprop="datePublished">2025-03-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/12/HPC/">HPC</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="High-Performance-Computing"><a href="#High-Performance-Computing" class="headerlink" title="High Performance Computing"></a>High Performance Computing</h2><h3 id="3-26"><a href="#3-26" class="headerlink" title="3&#x2F;26"></a>3&#x2F;26</h3><p>Ring_Allreduce：define a MPI_Allreduce using Ring arithmetic</p>
+<p>The code is as follows:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mpi.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EPS 1e-5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> ch = std::chrono;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Ring_Allreduce</span><span class="params">(<span class="type">void</span>* sendbuf, <span class="type">void</span>* recvbuf, <span class="type">int</span> n, MPI_Comm comm, <span class="type">int</span> comm_sz, <span class="type">int</span> my_rank)</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    <span class="type">int</span> chunk = (n + comm_sz - <span class="number">1</span>) / comm_sz;</span><br><span class="line">    <span class="type">int</span> last_chunk = n - (comm_sz<span class="number">-1</span>)*chunk;</span><br><span class="line">    <span class="type">int</span> total_bytes = n * <span class="built_in">sizeof</span>(<span class="type">float</span>);</span><br><span class="line">    <span class="type">float</span>* sendbuf_float = (<span class="type">float</span>*)sendbuf;</span><br><span class="line">    <span class="type">float</span>* recvbuf_float = (<span class="type">float</span>*)recvbuf;</span><br><span class="line">    <span class="type">float</span>* tmpbuf_float = (<span class="type">float</span>*)<span class="built_in">malloc</span>(total_bytes);</span><br><span class="line">    <span class="built_in">memcpy</span>(recvbuf, sendbuf, total_bytes);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; comm_sz - <span class="number">1</span>; ++i)&#123;</span><br><span class="line"></span><br><span class="line">        MPI_Request send_req,recv_req;</span><br><span class="line">        <span class="keyword">if</span> ((my_rank - i + comm_sz) % comm_sz == comm_sz - <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">MPI_Isend</span>(recvbuf_float + (my_rank - i + comm_sz) % comm_sz *chunk, last_chunk, MPI_FLOAT, (my_rank + <span class="number">1</span>) % comm_sz, <span class="number">0</span>, comm,&amp;send_req);</span><br><span class="line">            <span class="built_in">MPI_Irecv</span>(tmpbuf_float+(my_rank - <span class="number">1</span> +comm_sz - i) % comm_sz *chunk, chunk, MPI_FLOAT, (my_rank - <span class="number">1</span> + comm_sz) % comm_sz, <span class="number">0</span>, comm,&amp;recv_req);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> ((my_rank <span class="number">-1</span> + comm_sz - i) % comm_sz == comm_sz <span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="comment">// last_chunk = n - (comm_sz-1)*chunk;</span></span><br><span class="line">            <span class="built_in">MPI_Isend</span>(recvbuf_float + (my_rank - i + comm_sz) % comm_sz *chunk, chunk, MPI_FLOAT, (my_rank + <span class="number">1</span>) % comm_sz, <span class="number">0</span>, comm,&amp;send_req);</span><br><span class="line">            <span class="built_in">MPI_Irecv</span>(tmpbuf_float+(my_rank - <span class="number">1</span> +comm_sz - i) % comm_sz *chunk, last_chunk, MPI_FLOAT, (my_rank - <span class="number">1</span> + comm_sz) % comm_sz, <span class="number">0</span>, comm,&amp;recv_req);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">MPI_Isend</span>(recvbuf_float + (my_rank - i + comm_sz) % comm_sz *chunk , chunk, MPI_FLOAT, (my_rank + <span class="number">1</span>) % comm_sz, <span class="number">0</span>, comm,&amp;send_req);</span><br><span class="line">            <span class="built_in">MPI_Irecv</span>(tmpbuf_float+(my_rank - <span class="number">1</span> +comm_sz - i) % comm_sz *chunk , chunk, MPI_FLOAT, (my_rank - <span class="number">1</span> + comm_sz) % comm_sz, <span class="number">0</span>, comm,&amp;recv_req);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">MPI_Wait</span>(&amp;send_req, MPI_STATUS_IGNORE);</span><br><span class="line">        <span class="built_in">MPI_Wait</span>(&amp;recv_req, MPI_STATUS_IGNORE);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> special_chunk = chunk;</span><br><span class="line">        <span class="keyword">if</span> ((my_rank <span class="number">-1</span> + comm_sz - i) % comm_sz == comm_sz <span class="number">-1</span>)&#123;</span><br><span class="line">            special_chunk = last_chunk;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; special_chunk; ++j)&#123;</span><br><span class="line">            recvbuf_float[j+(my_rank - <span class="number">1</span> +comm_sz - i) % comm_sz*chunk] += tmpbuf_float[j + (my_rank - <span class="number">1</span> -i + comm_sz) % comm_sz*chunk];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; comm_sz<span class="number">-1</span>; ++i)&#123;</span><br><span class="line">        MPI_Request send_req,recv_req;</span><br><span class="line">        <span class="type">int</span> source_chunk = (my_rank + <span class="number">1</span> - i + comm_sz) % comm_sz; </span><br><span class="line">        <span class="type">int</span> dest_chunk = (my_rank - i + comm_sz) % comm_sz;</span><br><span class="line">        <span class="keyword">if</span> (source_chunk == comm_sz - <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">MPI_Isend</span>(recvbuf_float + source_chunk*chunk, last_chunk, MPI_FLOAT, (my_rank + <span class="number">1</span>) % comm_sz, <span class="number">0</span>, comm,&amp;send_req);</span><br><span class="line">            <span class="built_in">MPI_Irecv</span>(recvbuf_float + dest_chunk*chunk, chunk, MPI_FLOAT, (my_rank - <span class="number">1</span> + comm_sz) % comm_sz, <span class="number">0</span>, comm,&amp;recv_req);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (dest_chunk == comm_sz - <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">MPI_Isend</span>(recvbuf_float + source_chunk*chunk, chunk, MPI_FLOAT, (my_rank + <span class="number">1</span>) % comm_sz, <span class="number">0</span>, comm,&amp;send_req);</span><br><span class="line">            <span class="built_in">MPI_Irecv</span>(recvbuf_float + dest_chunk*chunk,last_chunk, MPI_FLOAT, (my_rank - <span class="number">1</span> + comm_sz) % comm_sz, <span class="number">0</span>, comm,&amp;recv_req);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">MPI_Isend</span>(recvbuf_float + source_chunk*chunk, chunk, MPI_FLOAT, (my_rank + <span class="number">1</span>) % comm_sz, <span class="number">0</span>, comm,&amp;send_req);</span><br><span class="line">            <span class="built_in">MPI_Irecv</span>(recvbuf_float + dest_chunk*chunk, chunk, MPI_FLOAT, (my_rank - <span class="number">1</span> + comm_sz) % comm_sz, <span class="number">0</span>, comm,&amp;recv_req);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">MPI_Wait</span>(&amp;send_req, MPI_STATUS_IGNORE);</span><br><span class="line">        <span class="built_in">MPI_Wait</span>(&amp;recv_req, MPI_STATUS_IGNORE);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">free</span>(tmpbuf_float);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// reduce + bcast</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Naive_Allreduce</span><span class="params">(<span class="type">void</span>* sendbuf, <span class="type">void</span>* recvbuf, <span class="type">int</span> n, MPI_Comm comm, <span class="type">int</span> comm_sz, <span class="type">int</span> my_rank)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">MPI_Reduce</span>(sendbuf, recvbuf, n, MPI_FLOAT, MPI_SUM, <span class="number">0</span>, comm);</span><br><span class="line">    <span class="built_in">MPI_Bcast</span>(recvbuf, n, MPI_FLOAT, <span class="number">0</span>, comm);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> ITER = <span class="built_in">atoi</span>(argv[<span class="number">1</span>]);</span><br><span class="line">    <span class="type">int</span> n = <span class="built_in">atoi</span>(argv[<span class="number">2</span>]);</span><br><span class="line">    <span class="type">float</span>* mpi_sendbuf = <span class="keyword">new</span> <span class="type">float</span>[n];</span><br><span class="line">    <span class="type">float</span>* mpi_recvbuf = <span class="keyword">new</span> <span class="type">float</span>[n];</span><br><span class="line">    <span class="type">float</span>* naive_sendbuf = <span class="keyword">new</span> <span class="type">float</span>[n];</span><br><span class="line">    <span class="type">float</span>* naive_recvbuf = <span class="keyword">new</span> <span class="type">float</span>[n];</span><br><span class="line">    <span class="type">float</span>* ring_sendbuf = <span class="keyword">new</span> <span class="type">float</span>[n];</span><br><span class="line">    <span class="type">float</span>* ring_recvbuf = <span class="keyword">new</span> <span class="type">float</span>[n];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">MPI_Init</span>(<span class="literal">nullptr</span>, <span class="literal">nullptr</span>);</span><br><span class="line">    <span class="type">int</span> comm_sz;</span><br><span class="line">    <span class="type">int</span> my_rank;</span><br><span class="line">    <span class="built_in">MPI_Comm_size</span>(MPI_COMM_WORLD, &amp;comm_sz);</span><br><span class="line">    <span class="built_in">MPI_Comm_rank</span>(MPI_COMM_WORLD, &amp;my_rank);</span><br><span class="line">  </span><br><span class="line">    <span class="built_in">srand</span>(<span class="built_in">time</span>(<span class="literal">NULL</span>) + my_rank);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        mpi_sendbuf[i] = <span class="keyword">static_cast</span> &lt;<span class="type">float</span>&gt; (<span class="built_in">rand</span>()) / <span class="keyword">static_cast</span> &lt;<span class="type">float</span>&gt; (RAND_MAX);</span><br><span class="line">    <span class="built_in">memcpy</span>(naive_sendbuf, mpi_sendbuf, n * <span class="built_in">sizeof</span>(<span class="type">float</span>));</span><br><span class="line">    <span class="built_in">memcpy</span>(ring_sendbuf, mpi_sendbuf, n * <span class="built_in">sizeof</span>(<span class="type">float</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">//warmup and check</span></span><br><span class="line">    <span class="built_in">MPI_Allreduce</span>(mpi_sendbuf, mpi_recvbuf, n, MPI_FLOAT, MPI_SUM, MPI_COMM_WORLD);</span><br><span class="line">    <span class="built_in">Naive_Allreduce</span>(naive_sendbuf, naive_recvbuf, n, MPI_COMM_WORLD, comm_sz, my_rank);</span><br><span class="line">    <span class="built_in">Ring_Allreduce</span>(ring_sendbuf, ring_recvbuf, n, MPI_COMM_WORLD, comm_sz, my_rank);</span><br><span class="line">    <span class="type">bool</span> correct = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">abs</span>(mpi_recvbuf[i] - ring_recvbuf[i]) &gt; EPS)</span><br><span class="line">        &#123;   </span><br><span class="line">            correct = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (correct)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> beg = ch::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> iter = <span class="number">0</span>; iter &lt; ITER; ++iter)</span><br><span class="line">            <span class="built_in">MPI_Allreduce</span>(mpi_sendbuf, mpi_recvbuf, n, MPI_FLOAT, MPI_SUM, MPI_COMM_WORLD);</span><br><span class="line">        <span class="keyword">auto</span> end = ch::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">        <span class="type">double</span> mpi_dur = ch::duration_cast&lt;ch::duration&lt;<span class="type">double</span>&gt;&gt;(end - beg).<span class="built_in">count</span>() * <span class="number">1000</span>; <span class="comment">//ms</span></span><br><span class="line"></span><br><span class="line">        beg = ch::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> iter = <span class="number">0</span>; iter &lt; ITER; ++iter)</span><br><span class="line">            <span class="built_in">Naive_Allreduce</span>(naive_sendbuf, naive_recvbuf, n, MPI_COMM_WORLD, comm_sz, my_rank);</span><br><span class="line">        end = ch::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">        <span class="type">double</span> naive_dur = ch::duration_cast&lt;ch::duration&lt;<span class="type">double</span>&gt;&gt;(end - beg).<span class="built_in">count</span>() * <span class="number">1000</span>; <span class="comment">//ms</span></span><br><span class="line"></span><br><span class="line">        beg = ch::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> iter = <span class="number">0</span>; iter &lt; ITER; ++iter)</span><br><span class="line">            <span class="built_in">Ring_Allreduce</span>(ring_sendbuf, ring_recvbuf, n, MPI_COMM_WORLD, comm_sz, my_rank);</span><br><span class="line">        end = ch::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">        <span class="type">double</span> ring_dur = ch::duration_cast&lt;ch::duration&lt;<span class="type">double</span>&gt;&gt;(end - beg).<span class="built_in">count</span>() * <span class="number">1000</span>; <span class="comment">//ms</span></span><br><span class="line">      </span><br><span class="line">        <span class="keyword">if</span> (my_rank == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;Correct.&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;MPI_Allreduce:   &quot;</span> &lt;&lt; mpi_dur &lt;&lt; <span class="string">&quot; ms.&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;Naive_Allreduce: &quot;</span> &lt;&lt; naive_dur &lt;&lt; <span class="string">&quot; ms.&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;Ring_Allreduce:  &quot;</span> &lt;&lt; ring_dur &lt;&lt; <span class="string">&quot; ms.&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">if</span> (my_rank == <span class="number">0</span>)</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;Wrong!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span>[] mpi_sendbuf;</span><br><span class="line">    <span class="keyword">delete</span>[] mpi_recvbuf;</span><br><span class="line">    <span class="keyword">delete</span>[] naive_sendbuf;</span><br><span class="line">    <span class="keyword">delete</span>[] naive_recvbuf;</span><br><span class="line">    <span class="keyword">delete</span>[] ring_sendbuf;</span><br><span class="line">    <span class="keyword">delete</span>[] ring_recvbuf;</span><br><span class="line">    <span class="built_in">MPI_Finalize</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/HPC/">HPC</a><a class="article-category-link" href="/categories/HPC/C-S/">C.S.</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-S/" rel="tag">C.S.</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HPC/" rel="tag">HPC</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-DFT" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/03/11/DFT/" class="article-date">
+      <time datetime="2025-03-11T08:56:02.000Z" itemprop="datePublished">2025-03-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/11/DFT/">DFT</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="DFT-learning-note"><a href="#DFT-learning-note" class="headerlink" title="DFT learning note"></a>DFT learning note</h2><p>2025&#x2F;3&#x2F;11<br>Always leave some note when learning. This will be my everyday learning note about DFT.</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Physics/">Physics</a><a class="article-category-link" href="/categories/Physics/Commputing-Science/">Commputing Science</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFT/" rel="tag">DFT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Physics/" rel="tag">Physics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quantum/" rel="tag">Quantum</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-vtuber" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/03/11/vtuber/" class="article-date">
+      <time datetime="2025-03-11T08:07:01.000Z" itemprop="datePublished">2025-03-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/11/vtuber/">vtuber</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="OpenLLM-Vtuber"><a href="#OpenLLM-Vtuber" class="headerlink" title="OpenLLM-Vtuber"></a>OpenLLM-Vtuber</h2><p>I’d like to create an avatar of Shorekeeper using the github Item “OpenLLM-Vtuber”. This blog is to trace my progress.</p>
+<h2 id="2025-3-11"><a href="#2025-3-11" class="headerlink" title="2025&#x2F;3&#x2F;11"></a>2025&#x2F;3&#x2F;11</h2><p>I cloned the repository and ran the code. Using my deepseek API from “火山方舟”, I successed in starting basic communication on local server with suiku, the default avatar in the Item. I gave her the prompt of shorekeeper.</p>
+<p><img src="/images/image.png"></p>
+<p>Future plans:</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Create a new avatar of shorekeeper using Live2D. But it’s quite “Art”, maybe hard for a programmer like me to do it.</li>
+<li><input disabled="" type="checkbox"> Replace the default AudioEngine with my own. I think it’s possible, but I need to learn more about the AudioEngine.</li>
+<li><input disabled="" type="checkbox"> Use my local deepseek-r1-distill-Qwen-14B to run the avatar. Whether she will be smarter or not remains to be seen.</li>
+</ul>
+<h2 id="2025-3-14"><a href="#2025-3-14" class="headerlink" title="2025&#x2F;3&#x2F;14"></a>2025&#x2F;3&#x2F;14</h2><p>I found a great AI audio creater <a target="_blank" rel="noopener" href="https://gsv.acgnai.top/">GPT-Sovits</a>. I generated an example:</p>
+<audio controls>
+  <source src="./vtuber/shorekeeper.mp3" type="audio/mpeg">
+</audio>
+
+<h2 id="2025-4-21"><a href="#2025-4-21" class="headerlink" title="2025&#x2F;4&#x2F;21"></a>2025&#x2F;4&#x2F;21</h2><p>I returned to the Item after a long time. This time I realized using the live2d model of 秧秧 instead of the default one. I also used a prompt of “Queen”. See here:<br><img src="/images/1745545848849.png" alt="1745545848849"></p>
+<p>next step:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Use my local deepseek-r1-distill-Qwen-14B to run the avatar.</li>
+<li><input disabled="" type="checkbox"> Find a well-drowned avatar.</li>
+<li><input disabled="" type="checkbox"> Replace the audio engin.</li>
+</ul>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/interest/">interest</a><a class="article-category-link" href="/categories/interest/LLM/">LLM</a><a class="article-category-link" href="/categories/interest/LLM/AI/">AI</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/interest/" rel="tag">interest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shorekeeper/" rel="tag">shorekeeper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vtuber/" rel="tag">vtuber</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Tools" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/03/06/Tools/" class="article-date">
+      <time datetime="2025-03-06T05:46:00.000Z" itemprop="datePublished">2025-03-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/06/Tools/">Tools</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Here-are-some-useful-links-for-post-writing-tricks"><a href="#Here-are-some-useful-links-for-post-writing-tricks" class="headerlink" title="Here are some useful links for post writing tricks"></a>Here are some useful links for post writing tricks</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/tag-plugins">tags</a> provides grammar for code blocks, citing, quotes, etc.</li>
+<li><a target="_blank" rel="noopener" href="https://link.hhtjim.com/">hhtjim</a> provides a outside music link for music players.</li>
+<li>The format of picture insertion is as follows: <img src="/images/image.png">, and the picture is placed in the ..&#x2F;images folder.</li>
+</ol>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Goal" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/03/05/Goal/" class="article-date">
+      <time datetime="2025-03-05T06:25:35.000Z" itemprop="datePublished">2025-03-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/05/Goal/">Goal</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="My-Goals"><a href="#My-Goals" class="headerlink" title="My Goals"></a>My Goals</h2><p>Currently I’m studying in Xv Yong’s group, and learning DFT calculation and machine learning. I hope I can learn more about condensed matter physics and machine learning in the future.</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-My-First-Post" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/03/04/My-First-Post/" class="article-date">
+      <time datetime="2025-03-04T08:42:01.000Z" itemprop="datePublished">2025-03-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/03/04/My-First-Post/">My First Post</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Hi！This-is-my-first-post"><a href="#Hi！This-is-my-first-post" class="headerlink" title="Hi！This is my first post!"></a>Hi！This is my first post!</h2><p>This is my first time to create a blog, and I can’t wait to write more articles in the future. The original goal is to record my learning process, and inspire myself by tracing what I have achieved. Hope I can be better in the future.</p>
+<h2 id="For-Visitors"><a href="#For-Visitors" class="headerlink" title="For Visitors"></a>For Visitors</h2><p>Thank you for visiting my blog! Hope you will find my posts interesting and helpful. If you have any questions or suggestions, please feel free to leave a comment or contact me. I look forward to hearing from you!</p>
+<h2 id="Very-Important"><a href="#Very-Important" class="headerlink" title="Very Important"></a>Very Important</h2><p>I love shorekeeper.</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2025 Jiahao Bao
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="http://bestwing.me" target="_blank">Sw'blog</a> by Swing
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
 </html>
